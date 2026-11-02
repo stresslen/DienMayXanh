@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.tmp/
+data/
+logs/
+
+# Local credentials and packaged copies
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+DienMayXanh-GitHub.zip
+

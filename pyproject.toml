@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dmx-review-crawler"
+version = "0.1.0"
+description = "Resumable Playwright crawler for public product reviews on Dien May Xanh"
+requires-python = ">=3.11"
+dependencies = [
+  "beautifulsoup4>=4.12,<5",
+  "google-genai>=1.14,<2",
+  "lxml>=5,<7",
+  "playwright>=1.50,<2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+dataset = ["numpy>=2,<3", "pyarrow>=20,<24", "datasets>=4,<5"]
+
+[project.scripts]
+dmx-crawl = "dmx_crawler.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
